@@ -32,7 +32,7 @@ https://myn-mjxo.onrender.com/filter/1?lPrice=999&hPrice=2999
 //page3
 
 >product details
-https://myn-mjxo.onrender.com/details/6480876a57a939f31d4bee63
+https://myn-mjxo.onrender.com/details/6480b341965d913be03b1436
 
 
 

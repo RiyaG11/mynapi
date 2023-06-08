@@ -24,6 +24,15 @@ app.get('/category', async (req,res)=>{
 
 app.get('/item', async (req,res)=>{
     let query = {};
+    if(req.query.categoryId){
+        query={category_id: Number(req.query.categoryId)}
+    }
+    else if(req.query.itemId){
+        query={item_id: Number(req.query.itemId)}
+    } 
+    else{
+        query={}
+    }
     let collection = "item";
     let output = await getData(collection,query);
     res.send(output)
