@@ -28,6 +28,25 @@ app.get('/item', async (req,res)=>{
     let output = await getData(collection,query);
     res.send(output)
 })
+app.get('/subitem', async (req,res)=>{
+    let query = {};
+    if(req.query.categoryId && req.query.itemId){
+        query={category_id: Number(req.query.categoryId), item_id: Number(req.query.itemId)}
+    }
+    else if(req.query.categoryId){
+        query={category_id: Number(req.query.categoryId)}
+    }
+    else if(req.query.itemId){
+        query={item_id: Number(req.query.itemId)}
+    } 
+    else{
+        query={}
+    }
+
+    let collection = "subitem";
+    let output = await getData(collection,query);
+    res.send(output)
+})
 app.get('/product', async(req,res)=>{
     let query = {}
     if(req.query.categoryId && req.query.itemId && req.query.subitemId){
